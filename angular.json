@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "property-listing-app"
+    }
+  },
+  "defaultProject": "property-listing-app",
+  "cli": {
+    "analytics": "256b5239-96e5-433a-b6b5-c3fc0019c4af"
+  }
 }
