@@ -1,26 +1,42 @@
 [
         {
         "id": 1,
-        "Name": "Olusegun Obasanjo House",
-        "Type": "House",
-        "Price": 12000
+        "SellRent": 1,
+        "Name": "Olusegun O. Hill",
+        "Type": "Hill",
+        "Price": 12000,
+        "Image": "prop-1"
     },
     {
         "id": 2,
-        "Name": "Umar Musa Yar Adua House",
-        "Type": "House",
-        "Price": 15000
+        "SellRent": 1,
+        "Name": "Umar M. Yar Adua Villa",
+        "Type": "Villa",
+        "Price": 15000,
+        "Image": "prop-2"
     },
         {
         "id": 3,
-        "Name": "Goodluck Ebele Jonathan House",
+        "SellRent": 1,
+        "Name": "Goodluck J. House",
         "Type": "House",
-       "Price": 17000
+        "Price": 17000,
+        "Image": "prop-3"
     },
         {
         "id": 4,
-        "Name": "Muhammadu Buhari House",
+        "SellRent": 1,
+        "Name": "M. Buhari House",
         "Type": "House",
-        "Price": 19000
+        "Price": 19000,
+        "Image": "prop-4"
+    },
+            {
+        "id": 4,
+        "SellRent": 2,
+        "Name": "2023 House",
+        "Type": "House",
+        "Price": 25000,
+        "Image": ""
     }
     ]
