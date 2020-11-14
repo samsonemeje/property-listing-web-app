@@ -12,18 +12,23 @@
               formControlName="userName"
             />
             <span
-              *ngIf="
-                !registrationForm.get('userName').valid &&
-                registrationForm.get('userName').touched
-              "
+              *ngIf="!userName.valid && userName.touched"
               class="error-block"
-              >Please provide Name</span
+              >Please provide a Name</span
             >
           </div>
 
           <div class="form-group col-12">
             <label for="email" class="form-label">Email</label>
             <input type="text" class="form-control" formControlName="email" />
+            <span *ngIf="!email.valid && email.touched" class="error-block">
+              <span *ngIf="email.hasError('required')"
+                >Please provide email id</span
+              >
+              <span *ngIf="email.hasError('email')"
+                >Please provide valid email id</span
+              >
+            </span>
           </div>
 
           <div class="form-group col-12">
@@ -33,6 +38,17 @@
               class="form-control"
               formControlName="password"
             />
+            <span
+              *ngIf="!password.valid && password.touched"
+              class="error-block"
+            >
+              <span *ngIf="password.errors['required']"
+                >Please provide password</span
+              >
+              <span *ngIf="password.errors.minlength"
+                >Password should not be less than 8 characters</span
+              >
+            </span>
           </div>
 
           <div class="form-group col-12">
@@ -42,6 +58,20 @@
               class="form-control"
               formControlName="confirmPassword"
             />
+            <span *ngIf="!confirmPassword.valid && confirmPassword.touched">
+              <span
+                *ngIf="confirmPassword.hasError('required')"
+                class="error-block"
+                >Please confirm password</span
+              >
+            </span>
+            <span
+              *ngIf="
+                registrationForm.hasError('notMatched') && confirmPassword.valid
+              "
+              class="error-block"
+              >password not matched</span
+            >
           </div>
 
           <div class="form-group col-12">
