@@ -23,7 +23,7 @@ export class UserRegisterComponent implements OnInit {
   }
 
   passwordMatchingValidator(fg: FormGroup): Validators {
-    return fg.get('password').value === fg.get('confirmPassword').value ? null : {notMatched: true}
+    return fg.get('password').value === fg.get('confirmPassword').value ? null : {notMatched: true};
   }
 
   onSubmit() {
