@@ -12,7 +12,7 @@
               formControlName="userName"
             />
             <span
-              *ngIf="!userName.valid && userName.touched"
+              *ngIf="!userName.valid && (userName.touched || userSubmitted)"
               class="error-block"
               >Please provide a Name</span
             >
@@ -21,7 +21,10 @@
           <div class="form-group col-12">
             <label for="email" class="form-label">Email</label>
             <input type="text" class="form-control" formControlName="email" />
-            <span *ngIf="!email.valid && email.touched" class="error-block">
+            <span
+              *ngIf="!email.valid && (email.touched || userSubmitted)"
+              class="error-block"
+            >
               <span *ngIf="email.hasError('required')"
                 >Please provide email id</span
               >
@@ -39,7 +42,7 @@
               formControlName="password"
             />
             <span
-              *ngIf="!password.valid && password.touched"
+              *ngIf="!password.valid && (password.touched || userSubmitted)"
               class="error-block"
             >
               <span *ngIf="password.errors['required']"
@@ -58,7 +61,12 @@
               class="form-control"
               formControlName="confirmPassword"
             />
-            <span *ngIf="!confirmPassword.valid && confirmPassword.touched">
+            <span
+              *ngIf="
+                !confirmPassword.valid &&
+                (confirmPassword.touched || userSubmitted)
+              "
+            >
               <span
                 *ngIf="confirmPassword.hasError('required')"
                 class="error-block"
@@ -77,6 +85,11 @@
           <div class="form-group col-12">
             <label for="mobile" class="form-label">Mobile</label>
             <input type="text" class="form-control" formControlName="mobile" />
+            <span
+              *ngIf="!mobile.valid && (mobile.touched || userSubmitted)"
+              class="error-block"
+              >Please provide Mobile Number</span
+            >
           </div>
 
           <div class="form-group col-12">

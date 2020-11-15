@@ -11,6 +11,7 @@ export class UserRegisterComponent implements OnInit {
 
   registrationForm: FormGroup;
   user: any = {};
+  userSubmitted: boolean;
 
   constructor(private fb: FormBuilder, private userService: UserServiceService) { }
 
@@ -27,7 +28,7 @@ export class UserRegisterComponent implements OnInit {
 
   createRegistrationForm() {
     this.registrationForm = this.fb.group({
-      userName: ['Samson', Validators.required],
+      userName: ['', Validators.required],
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required, Validators.minLength(8)]],
       confirmPassword: [null, Validators.required],
@@ -64,8 +65,12 @@ export class UserRegisterComponent implements OnInit {
 
   onSubmit() {
     console.log(this.registrationForm.value);
+    this.userSubmitted = true;
+    if (this.registrationForm.valid) {
     this.user = Object.assign(this.user, this.registrationForm.value);
     this.userService.addUser(this.user);
     this.registrationForm.reset();
+    this.userSubmitted = false;
+  } else {}
   }
 }
