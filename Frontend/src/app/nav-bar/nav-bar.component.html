@@ -52,9 +52,32 @@
             >Login</a
           >
         </li>
-        <li *ngIf="loggedIn()" class="nav-item">
+        <!-- <li *ngIf="loggedIn()" class="nav-item">
           <a class="nav-link" (click)="onLogout()">Logout</a>
-        </li>
+        </li> -->
+        <div *ngIf="loggedIn()" class="dropdown mr-5" dropdown>
+          <a
+            href="#"
+            class="dropdown-toggle text-light"
+            dropdownToggle
+            (click)="(false)"
+            >Welcome {{ loggedInUser }}</a
+          >
+          <div class="dropdown-menu" *dropdownMenu>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-tachometer-alt mr-2"></i>View Dashboard
+            </a>
+            <a href="#" class="dropdown-item">
+              <i class="far fa-user-circle mr-2"></i>My Profile
+            </a>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-key mr-2"></i>Change Password
+            </a>
+            <a (click)="onLogout()" class="dropdown-item">
+              <i class="fas fa-sign-out-alt mr-2"></i>Logout
+            </a>
+          </div>
+        </div>
       </ul>
     </div>
   </div>
