@@ -4,17 +4,77 @@
     <form (ngSubmit)="onSubmit(Form)" #Form="ngForm">
       <div>
         <tabset #formTabs>
+          <!-- Basic Info Tab begins -->
           <tab heading="Basic Info">
             <div class="form-group col-12">
-              <input type="radio" id="sell" value="1" name="SellRent" />
-              <label class="m-2">Sell</label>
-
-              <input type="radio" id="rent" value="2" name="SellRent" />
-              <label class="m-2">Rent</label>
+              <p>what i want</p>
+              <div class="btn-group" btnRadioGroup>
+                <label
+                  class="btn btn-outline-primary mr-2"
+                  btnRadio="1"
+                  role="button"
+                  tabindex="0"
+                  name="SellRent"
+                  >Sell</label
+                >
+                <label
+                  class="btn btn-outline-primary"
+                  btnRadio="2"
+                  role="button"
+                  tabindex="0"
+                  name="SellRent"
+                  >Rent</label
+                >
+              </div>
             </div>
 
             <div class="form-group col-12">
-              <label>Name</label>
+              <p>BHK</p>
+              <div class="btn-group" btnRadioGroup>
+                <label
+                  *ngFor="let bhk of [1, 2, 3, 4]"
+                  class="btn btn-outline-primary mr-2"
+                  [btnRadio]="bhk"
+                  role="button"
+                  tabindex="0"
+                  name="SellRent"
+                  >{{ bhk }}</label
+                >
+              </div>
+            </div>
+
+            <div class="form-group col-12">
+              <p>Property Type</p>
+              <div class="btn-group" btnRadioGroup>
+                <label
+                  *ngFor="let ptype of propertyTypes"
+                  class="btn btn-outline-primary mr-2"
+                  [btnRadio]="ptype"
+                  role="button"
+                  tabindex="0"
+                  name="SellRent"
+                  >{{ ptype }}</label
+                >
+              </div>
+            </div>
+
+            <div class="form-group col-12">
+              <p>Furnishing Type</p>
+              <div class="btn-group" btnRadioGroup>
+                <label
+                  *ngFor="let ftype of furnishTypes"
+                  class="btn btn-outline-primary mr-2"
+                  [btnRadio]="ftype"
+                  role="button"
+                  tabindex="0"
+                  name="SellRent"
+                  >{{ ftype }}</label
+                >
+              </div>
+            </div>
+
+            <div class="form-group col-12">
+              <label>In Building/Society/Project</label>
               <input
                 type="text"
                 class="form-control"
@@ -38,13 +98,8 @@
             </div>
 
             <div class="form-group col-12">
-              <label>Type</label>
-              <input type="text" class="form-control" ngModel name="Type" />
-            </div>
-
-            <div class="form-group col-12">
-              <label>Price</label>
-              <input type="text" class="form-control" ngModel name="Price" />
+              <label>City</label>
+              <input type="text" class="form-control" />
             </div>
 
             <div class="form-group col-12">
@@ -58,6 +113,7 @@
             </div>
           </tab>
 
+          <!-- Pricing and Area Tab -->
           <tab heading="Pricing and Area">
             <div class="form-group col-12">
               <label>Price (in USD)</label>
@@ -103,6 +159,7 @@
             </div>
           </tab>
 
+          <!-- Address Tab -->
           <tab heading="Address">
             <div class="form-group col-12">
               <label>Floor</label>
@@ -143,14 +200,28 @@
             </div>
           </tab>
 
+          <!-- Other Details Tab -->
           <tab heading="Other Details">
             <div class="form-group col-12">
-              <label>Ready to Move</label><br />
-              <input type="radio" id="Yes" value="1" name="RTM" />
-              <label class="m-2">Yes</label>
-
-              <input type="radio" id="No" value="2" name="RTM" />
-              <label class="m-2">No</label>
+              <p>Ready to move</p>
+              <div class="btn-group" btnRadioGroup>
+                <label
+                  class="btn btn-outline-primary mr-2"
+                  btnRadio="1"
+                  role="button"
+                  tabindex="0"
+                  name="SellRent"
+                  >Yes</label
+                >
+                <label
+                  class="btn btn-outline-primary"
+                  btnRadio="2"
+                  role="button"
+                  tabindex="0"
+                  name="SellRent"
+                  >No</label
+                >
+              </div>
             </div>
 
             <div class="form-group col-3">
@@ -164,13 +235,63 @@
             </div>
 
             <div class="form-group col-12">
-              <label>Gated Community</label>
-              <input type="text" class="form-control" />
+              <p>Gated Community</p>
+              <div class="btn-group" btnRadioGroup>
+                <label
+                  class="btn btn-outline-primary mr-2"
+                  btnRadio="1"
+                  role="button"
+                  tabindex="0"
+                  name="SellRent"
+                  >Yes</label
+                >
+                <label
+                  class="btn btn-outline-primary"
+                  btnRadio="2"
+                  role="button"
+                  tabindex="0"
+                  name="SellRent"
+                  >No</label
+                >
+              </div>
             </div>
 
             <div class="form-group col-12">
-              <label>Main Entrance</label>
-              <input type="text" class="form-control" />
+              <p>Ready to move</p>
+              <div class="btn-group" btnRadioGroup>
+                <label
+                  class="btn btn-outline-primary"
+                  btnRadio="1"
+                  role="button"
+                  tabindex="0"
+                  name="SellRent"
+                  >East</label
+                >
+                <label
+                  class="btn btn-outline-primary"
+                  btnRadio="2"
+                  role="button"
+                  tabindex="0"
+                  name="SellRent"
+                  >West</label
+                >
+                <label
+                  class="btn btn-outline-primary"
+                  btnRadio="2"
+                  role="button"
+                  tabindex="0"
+                  name="SellRent"
+                  >South</label
+                >
+                <label
+                  class="btn btn-outline-primary"
+                  btnRadio="2"
+                  role="button"
+                  tabindex="0"
+                  name="SellRent"
+                  >North</label
+                >
+              </div>
             </div>
 
             <div class="form-group col-12">
@@ -197,6 +318,7 @@
             </div>
           </tab>
 
+          <!-- Photos Tab -->
           <tab heading="Photos">
             <div class="form-group col-12">
               <div class="photo-control">
