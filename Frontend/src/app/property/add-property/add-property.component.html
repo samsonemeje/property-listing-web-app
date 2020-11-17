@@ -226,7 +226,13 @@
 
             <div class="form-group col-3">
               <label>Possession/Avaialble From</label>
-              <input type="date" class="form-control" />
+              <input
+                type="text"
+                placeholder="Datepicker"
+                class="form-control"
+                bsDatepicker
+                [bsConfig]="{ containerClass: 'theme-dark-blue' }"
+              />
             </div>
 
             <div class="form-group col-12">
