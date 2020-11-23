@@ -1,0 +1,54 @@
+.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.error-block {
+  color: red;
+}
+
+.btn-group > label[ng-reflect-btn-radio] {
+  border-radius: 44px;
+  padding: 0 15px;
+  line-height: 30px;
+}
+
+.card-header > h1,
+.card-header > h2,
+.card-header > h4 {
+  color: white;
+}
+
+.card-header {
+  height: 42px;
+  padding: 4px 10px !important;
+  background-color: #007bff !important;
+}
+
+.tab-panel {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+  min-height: 600px;
+  background-color: white;
+}
+
+.member-tabset > .nav-tabs > li.active {
+  border-bottom: 4px solid #007bff;
+  position: relative;
+}
+
+/* .member-tabset >,
+.nav-tabs > li.open > a > i,
+.member-tabset > .nav-tabs > li:hover > a > i {
+  color: #a6a6a6;
+}
+
+.nav-tabs > li.open,
+.member-tabset >,
+.nav-tabs > li:hover {
+  border-bottom: 4px solid #e1e2eb;
+} */
+
+ul.nav.nav-tabs {
+  margin-bottom: 35px;
+}
