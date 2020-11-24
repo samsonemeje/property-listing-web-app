@@ -7,10 +7,15 @@
           <div class="tab-panel">
             <tabset #formTabs class="member-tabset">
               <!-- Basic Info Tab begins -->
-              <tab heading="Basic Info" class="mb-5">
+              <tab
+                heading="Basic Info"
+                ngModelGroup="BasicInfo"
+                #BasicInfo="ngModelGroup"
+                class="mb-5"
+              >
                 <div class="form-group col-12">
                   <p>what i want</p>
-                  <div class="btn-group" btnRadioGroup>
+                  <div class="btn-group" btnRadioGroup name="SellRent" required>
                     <label
                       class="btn btn-outline-primary mr-2"
                       btnRadio="1"
@@ -129,6 +134,7 @@
                     (click)="selectTab(1)"
                     type="button"
                     class="btn btn-primary btn-block"
+                    [disabled]="!BasicInfo.valid"
                   >
                     Next
                   </button>

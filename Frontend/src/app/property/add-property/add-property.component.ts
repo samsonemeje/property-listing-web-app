@@ -41,6 +41,7 @@ export class AddPropertyComponent implements OnInit {
 
   onSubmit(Form: NgForm) {
     console.log('congrats, form submitted');
+    // console.log('SellRent=' + this.addPropertyForm.value.SellRent);
     console.log(this.addPropertyForm);
   }
 
